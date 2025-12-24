@@ -1,55 +1,59 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+# Project Constitution
+
+## Project Scope
+This constitution applies to:
+- All textbook content
+- All AI-generated text
+- All RAG chatbot responses
+- All documentation in this repository
+
+---
 
 ## Core Principles
+1. Accuracy through source-grounded content
+2. Clarity for undergraduate computer science learners
+3. Reproducibility of knowledge and system behavior
+4. No hallucination in AI responses
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+---
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+## Writing Standards
+- Reading level: undergraduate (clear, precise, structured)
+- No vague language ("some", "many", "etc.")
+- Every technical term must be defined before use
+- Step-by-step explanations required for concepts
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+---
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+## Technical Standards
+- RAG responses must use retrieved context only
+- No external knowledge outside indexed content
+- Chunk size: 400–600 tokens
+- Overlap: 10–15%
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+---
 
-### [PRINCIPLE_6_NAME]
+## Source & Content Rules
+- All instructional content must be internally consistent
+- No fabricated examples or tools
+- No marketing language
 
+---
 
-[PRINCIPLE__DESCRIPTION]
+## AI Behavior Constraints
+- AI must refuse to answer if no relevant context is retrieved
+- AI must cite chunk IDs internally (for debugging)
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+---
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+## Tooling Constraints
+- Backend: FastAPI
+- Vector store: Qdrant
+- Docs: Docusaurus
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+---
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
-
-## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
-
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
-
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+## Success Criteria
+- Queries return only source-backed answers
+- No hallucinations in chatbot output
+- All modules follow same instructional standard
